@@ -175,7 +175,7 @@
 
         <!-- Founder Image with Glow -->
         <div class="founder-img">
-          <img src="Logo3.png" alt="Thejus C Jayakumar">
+          <img src="logo sq.png" alt="Thejus C Jayakumar">
           <div class="glow-ring"></div>
         </div>
       </div>
@@ -551,23 +551,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const grid = document.querySelector(".pricing-grid");
+  const grid = document.querySelector('.pricing-grid');
+  let scrollAmount = 0;
+  const scrollStep = 1; // pixels per interval
+  const scrollDelay = 10; // ms per interval
 
-  // Only run auto-swipe on mobile (screen < 768px)
-  if (window.innerWidth < 768) {
-    let scrollInterval = setInterval(() => {
-      if (grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 50) {
-        // Reached the end → go back to start smoothly
-        grid.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        // Move forward by one card
-        grid.scrollBy({ left: grid.clientWidth * 0.85, behavior: "smooth" });
-      }
-    }, 4000); // Every 4 seconds
-
-    // Optional: Pause auto-swipe when user touches
-    grid.addEventListener("touchstart", () => clearInterval(scrollInterval));
+  function autoScroll() {
+    scrollAmount += scrollStep;
+    if(scrollAmount >= grid.scrollWidth - grid.clientWidth){
+      scrollAmount = 0; // reset to start
+    }
+    grid.scrollTo({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
   }
+
+  setInterval(autoScroll, scrollDelay);
 });
 </script>
 </body>
