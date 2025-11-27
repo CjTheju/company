@@ -405,9 +405,14 @@ nav { display: flex; align-items: center; gap: 3rem; }
 .experience { margin-top: 1rem; opacity: 0.8; font-size: 0.95rem; }
 /* Medium-size card styling */
 .medium-card {
-  transform: scale(0.88);     /* make it medium */
-  opacity: 0.95;
+  transform: scale(0.70); /* reduces overall size to 88% */
+  opacity: 0.95;           /* slight transparency */
+  /* Optional: explicitly control width/height if needed */
+  /* width: 90%; */
+  /* height: auto; */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* smooth scaling */
 }
+
 
 /* Disable hover lifting too much for medium card */
 .medium-card:hover {
@@ -816,6 +821,7 @@ nav { display: flex; align-items: center; gap: 3rem; }
   box-shadow: 0 8px 25px rgba(0,0,0,0.35); /* reduced */
   transition: all 0.4s ease;
   min-width: 0;
+    scroll-behavior: smooth; /* smooth auto scroll */
 }
 
 .pricing-card:hover {
