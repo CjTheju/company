@@ -360,6 +360,41 @@ nav { display: flex; align-items: center; gap: 3rem; }
   color: var(--gold);
   border: 2px solid var(--gold);
 }
+.btn-primary-small {
+  background-color: #25D366;
+  color: white !important;         /* Black text */
+  padding: 15px 32px;
+  border-radius: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.btn-primary-small:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+      0 0 15px rgba(37, 211, 102, 0.7),   /* outer green glow */
+      0 0 30px rgba(37, 211, 102, 0.5),   /* larger glow */
+      0 10px 40px rgba(0,0,0,0.15);      /* soft shadow */
+}
+
+/* Text inside span */
+.btn-primary-small .limited {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+.free {
+  background: linear-gradient(90deg, #FFD700, #F6C300, #FFB800);
+  -webkit-background-clip: text;
+  margin-left: 6px;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
 .btn-secondary:hover { background: var(--gold); color: #000; }
 
 .batch-info {
@@ -377,7 +412,7 @@ nav { display: flex; align-items: center; gap: 3rem; }
   font-size: 1.15rem;
   font-weight: 500;
 }
-.limited { color: var(--gold); font-weight: 900; animation: pulse 2s infinite; }
+.limited { color: var(--white); font-weight: 700; animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.6; } }
 
 /* Profile Cards */
@@ -967,35 +1002,71 @@ nav { display: flex; align-items: center; gap: 3rem; }
 }
 
 /* Guarantee */
-.guarantee {
-  text-align: center;
-  margin: 5rem auto 0;
-  padding: 2.2rem 2rem;
-  background: rgba(255,215,0,0.12);
-  border: 1.5px dashed rgba(255,215,0,0.4);
-  border-radius: 22px;
-  max-width: 900px;
+.video-box {
+  max-width: 1500px;
+  margin: 40px auto;
+  padding: 20px;
+  background: transparent; /* 🔶 soft gold background */
+  border-radius: 18px;
+  box-shadow: 0 14px 45px rgba(0,0,0,0.1);
 }
 
-.guarantee i {
-  font-size: 3rem;
-  color: var(--gold);
-  margin-bottom: 1rem;
+.video-wrapper {
+  width: 100%;
+  height: 300px; /* 🔥 RECTANGLE, NOT THUMBNAIL */
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
 }
 
-.guarantee p {
-  font-size: 1.2rem;
-  color: #eee;
-  line-height: 1.7;
-  font-weight: 500;
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-heading {
+  margin-top: 18px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #c08700; /* 🔶 gold text */
+}
+
+.video-subtext {
+  font-size: 15px;
+  color: #6e6e6e;
+  margin-top: 4px;
+}
+@media (max-width: 768px) {
+  .video-box {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .video-wrapper {
+    height: 260px; /* mobile-friendly rectangle */
+    border-radius: 12px;
+  }
+
+  .video-wrapper iframe {
+    height: 100%;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 450px) {
+  .video-wrapper {
+    height: 220px;
+  }
 }
 
 /* CONTACT SECTION */
 #contact {
-  padding: 140px 5% 180px;
+  padding: 100px 5% 40px; /* top 100px, bottom 40px */
   position: relative;
   background: linear-gradient(to bottom, transparent 0%, rgba(10,10,20,0.6) 100%);
 }
+
 
 .contact-container {
   max-width: 1400px;
@@ -1106,7 +1177,7 @@ nav { display: flex; align-items: center; gap: 3rem; }
 
 /* Contact Form */
 .contact-section {
-      padding: 6rem 1rem 4rem;
+      padding: rem 1rem 4rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -1451,6 +1522,7 @@ nav { display: flex; align-items: center; gap: 3rem; }
   display: grid;
   place-items: center;
   transition: all 0.4s;
+  text-decoration: none;
 }
 
 .footer-social a:hover {
@@ -1501,6 +1573,13 @@ nav { display: flex; align-items: center; gap: 3rem; }
 .footer-legal a:hover {
   color: var(--gold);
 }
+.footer-logo-img {
+  width: 150px; /* Change size if needed */
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+}
+
 
 /* Responsive */
 @media (max-width: 992px) {
@@ -1521,4 +1600,10 @@ nav { display: flex; align-items: center; gap: 3rem; }
   .footer-social { justify-content: center; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .footer-legal a { margin: 0.5rem; display: inline-block; }
+  
+  .footer-logo-img {
+    margin: 0 auto 12px auto; /* centers the logo */
+    display: block;
+  }
+
 }
