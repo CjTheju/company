@@ -484,6 +484,43 @@ nav { display: flex; align-items: center; gap: 3rem; }
   .logo { font-size: 1.4rem; padding: 8px 18px; }
   .btn-primary, .btn-secondary { padding: 16px 30px; font-size: 1rem; }
 }
+/* ===================== Smooth entrance animation for hero ===================== */
+.hero,
+.hero .left,
+.profile-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: sinkIn 1s ease forwards;
+}
+
+/* Staggered animation delays */
+.hero {
+  animation-delay: 0.1s;
+}
+.hero .left {
+  animation-delay: 0.3s;
+}
+.profile-card {
+  animation-delay: 0.5s;
+}
+
+/* Keyframes */
+@keyframes sinkIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional: stagger each profile card individually */
+.profile-card:nth-child(1) { animation-delay: 0.5s; }
+.profile-card:nth-child(2) { animation-delay: 0.7s; }
+.profile-card:nth-child(3) { animation-delay: 0.9s; }
+
 /* Mobile Close Button — Beautiful & Always Clickable */
 
 
