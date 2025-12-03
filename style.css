@@ -779,7 +779,9 @@ nav { display: flex; align-items: center; gap: 3rem; }
   padding: 20px;
   background: transparent; /* 🔶 soft gold background */
   border-radius: 18px;
-  box-shadow: 0 14px 45px rgba(0,0,0,0.1);
+  /* box-shadow: 0 14px 45px rgba(0,0,0,0.1); */
+    box-shadow: 0 0 60px rgba(255, 215, 0, 0.6);
+
 }
 
 .video-wrapper {
@@ -797,7 +799,8 @@ nav { display: flex; align-items: center; gap: 3rem; }
 }
 
 .video-heading {
-  margin-top: 18px;
+  margin-top: 0px;
+  text-align:center;
   font-size: 24px;
   font-weight: 700;
   color: #c08700; /* 🔶 gold text */
@@ -807,6 +810,7 @@ nav { display: flex; align-items: center; gap: 3rem; }
   font-size: 15px;
   color: #6e6e6e;
   margin-top: 4px;
+  text-align:center;
 }
 @media (max-width: 768px) {
   .video-box {
