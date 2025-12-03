@@ -633,7 +633,37 @@ nav { display: flex; align-items: center; gap: 3rem; }
   letter-spacing: 1px;
   box-shadow: 0 5px 15px rgba(255,215,0,0.4);
 }
+.popular-badges {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #8B5CF6, #7C3AED);
+  color: #000;
+  padding: 6px 20px;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+}
 
+.popular-badge::before,
+.popular-badge::after {
+  content: "★";
+  color: #fff;        /* Star color */
+  font-size: 0.9rem;  /* Smaller than text */
+  margin: 0;      /* Space from text */
+}
+
+
+.popular-badges::before,
+.popular-badges:after {
+  content: "★";
+  color: #fff;        /* Star color */
+  font-size: 0.9rem;  /* Smaller than text */
+  margin: 0;      /* Space from text */
+}
 /* Compact text */
 .card-header h3 {
   font-size: 1.35rem; /* reduced */
@@ -748,7 +778,14 @@ nav { display: flex; align-items: center; gap: 3rem; }
   .card-header h3 {
     font-size: 1.25rem;
   }
+  .popular-badge,.popular-badges {
+    padding: 4px 14px;
+    font-size: 0.6rem;
+    top: -8px;
+    box-shadow: 0 3px 10px rgba(255,215,0,0.35);
+  }
 }
+
 
 /* Guarantee */
 .video-box {
