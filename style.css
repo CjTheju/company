@@ -648,22 +648,6 @@ nav { display: flex; align-items: center; gap: 3rem; }
   box-shadow: 0 5px 15px rgba(255,215,0,0.4);
 }
 
-.popular-badge::before,
-.popular-badge::after {
-  content: "★";
-  color: #fff;        /* Star color */
-  font-size: 0.9rem;  /* Smaller than text */
-  margin: 0;      /* Space from text */
-}
-
-
-.popular-badges::before,
-.popular-badges:after {
-  content: "★";
-  color: #fff;        /* Star color */
-  font-size: 0.9rem;  /* Smaller than text */
-  margin: 0;      /* Space from text */
-}
 /* Compact text */
 .card-header h3 {
   font-size: 1.35rem; /* reduced */
@@ -779,11 +763,12 @@ nav { display: flex; align-items: center; gap: 3rem; }
     font-size: 1.25rem;
   }
   .popular-badge,.popular-badges {
-    padding: 4px 14px;
+    padding: 4px 12px;
     font-size: 0.6rem;
     top: -8px;
     box-shadow: 0 3px 10px rgba(255,215,0,0.35);
   }
+
 }
 
 
