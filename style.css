@@ -117,12 +117,13 @@ nav { display: flex; align-items: center; gap: 3rem; }
   background: linear-gradient(90deg, var(--gold), var(--gold-dark));
   color: var(--dark);
   border: none;
-  padding: 12px 28px;
+  padding: 9px 23px;
   border-radius: 50px;
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 10px 30px rgba(255,215,0,0.4);
   transition: all 0.4s;
+  text-decoration: none; /* 🔥 removes underline */
 }
 .whatsapp-btn:hover {
   transform: translateY(-4px);
@@ -1382,3 +1383,4 @@ nav { display: flex; align-items: center; gap: 3rem; }
   }
 
 }
+
